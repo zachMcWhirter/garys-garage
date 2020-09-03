@@ -1,24 +1,28 @@
 using System;
 
-public class Cessna : Vehicle
+namespace GarysGarage
 {
-    public double FuelCapacity { get; set; }
 
-    public void RefuelTank()
+    public class Cessna : Vehicle, IRealRide
     {
-        // method definition omitted
-    }
+        public double FuelCapacity { get; set; }
+        public int CurrentTankPercentage { get; set; }
+        public void RefuelTank()
+        {
+            CurrentTankPercentage = 100;
+        }
 
-    public override void Drive()
-    {
-        Console.WriteLine("Jet says Zoooooom!");
-    }
-    public override void Turn(string direction)
-    {
-        Console.WriteLine("Jet turns upside down!");
-    }
-    public override void Stop()
-    {
-        Console.WriteLine("Jet stops Flying! That's not good");
+        public override void Drive()
+        {
+            Console.WriteLine("Jet says Zoooooom!");
+        }
+        public override void Turn(string direction)
+        {
+            Console.WriteLine("Jet turns upside down!");
+        }
+        public override void Stop()
+        {
+            Console.WriteLine("Jet stops Flying! That's not good");
+        }
     }
 }
